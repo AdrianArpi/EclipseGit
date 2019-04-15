@@ -1,7 +1,9 @@
 package Eventos;
 
+import java.awt.Checkbox;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
@@ -51,7 +53,7 @@ class ventana6 extends JFrame{
 		
 		//Para ahorrarnos todo el procedimiento de arriba, podemos instanciar todo directamente
 		botones lamina=new botones();
-		lamina.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		lamina.setLayout(new FlowLayout(FlowLayout.LEFT));
 		add(lamina);
 		/*No hace falta instanciar dos veces la clase JPanel*/
 	}
@@ -109,6 +111,13 @@ class botones extends JPanel{
 						mapaEntrada.put(KeyStroke.getKeyStroke("ctrl R"), "fondo_rojo");
 						mapaAccion.put("fondo_rojo", accionRojo);
 		
+						
+		//Añadimos nuevos componentes
+		 setLayout(new GridLayout(3, 1));
+		 add(new Checkbox("one", null, true));
+		 add(new Checkbox("two"));
+		 add(new Checkbox("three"));
+						
 		
 	}
 	
