@@ -113,10 +113,12 @@ class botones extends JPanel{
 		
 						
 		//Añadimos nuevos componentes
-		 setLayout(new GridLayout(3, 1));
-		 add(new Checkbox("one", null, true));
-		 add(new Checkbox("two"));
-		 add(new Checkbox("three"));
+//		 setLayout(new GridLayout(3, 1));
+//		 add(new Checkbox("one", null, true));
+//		 add(new Checkbox("two"));
+//		 add(new Checkbox("three"));
+						
+						
 						
 		
 	}
