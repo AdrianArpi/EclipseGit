@@ -2,16 +2,25 @@ package pruebas;
 
 public class CalculadoraVer {
 
+	int num1,num2;
 	//Constructo con dos parametros
 	public CalculadoraVer(int num1, int num2){
 		
-		
+		this.num1=num1;
+		this.num2=num2;
 		
 		
 	}
 	
+	public int sumarNumeros(){
+		
+		return num1 + num2;
+		
+	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		CalculadoraVer str=new CalculadoraVer(8, 4);
+		
+		System.out.println(str.sumarNumeros());
 
 	}
 
