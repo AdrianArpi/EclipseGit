@@ -30,6 +30,14 @@ public class CalculadoraVer {
 			
 		}
 	
+	
+	public int dividirNumeros(){
+		
+		return num1/num2;
+		
+	}
+
+	
 	public static void main(String[] args) {
 		CalculadoraVer str=new CalculadoraVer(8, 4);
 		
@@ -38,6 +46,8 @@ public class CalculadoraVer {
 		System.out.println("El resultado de la resta es: " + str.restarNumeros());
 		
 		System.out.println("El resultado de la multiplicacion es: " + str.multiplicarNumeros());
+		
+		System.out.println("El resultado de la division es: " + str.dividirNumeros());
 
 	}
 
