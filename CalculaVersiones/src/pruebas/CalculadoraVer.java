@@ -24,12 +24,20 @@ public class CalculadoraVer {
 		
 	}
 	
+	public int multiplicarNumeros(){
+			
+			return num1*num2;
+			
+		}
+	
 	public static void main(String[] args) {
 		CalculadoraVer str=new CalculadoraVer(8, 4);
 		
 		System.out.println("El resultado de la suma es: " + str.sumarNumeros());
 		
 		System.out.println("El resultado de la resta es: " + str.restarNumeros());
+		
+		System.out.println("El resultado de la multiplicacion es: " + str.multiplicarNumeros());
 
 	}
 
