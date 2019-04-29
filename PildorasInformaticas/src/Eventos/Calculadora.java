@@ -1,6 +1,7 @@
 package Eventos;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,7 +36,7 @@ class MarcoCalculadora extends JFrame{
 		
 		setTitle("Calculadora Adrian");
 		
-		setBounds(500, 300, 450, 300);
+		setBounds(500, 300, 350, 550);
 		
 		//Añadimos la lamina
 		LaminaCalculadora miLamina=new LaminaCalculadora();
@@ -108,9 +109,9 @@ class LaminaCalculadora extends JPanel{
 		ponerBoton("2",insertar);
 		ponerBoton("3",insertar);
 		ponerBoton("-",orden);
-		             
+		
+		ponerBoton(".",orden);            
 		ponerBoton("0",insertar);
-		ponerBoton(".",orden);
 		ponerBoton("=",orden);
 		ponerBoton("+",orden);
 		              
@@ -127,6 +128,10 @@ class LaminaCalculadora extends JPanel{
 	
 	//Añadimos los oyentes
 	boton.addActionListener(oyente);
+	boton.setBackground(new Color(11,8,8));
+	
+	
+	
 	
 	
 	
