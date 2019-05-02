@@ -38,84 +38,64 @@ class MarcoRadio extends JFrame {
 
 class LaminaRadio extends JPanel {
 
-	JRadioButton btn1;
-	JRadioButton btn2;
-	JRadioButton btn3;
-	JRadioButton btn4;
-	JRadioButton btn5;
+	private JRadioButton btn1, btn2, btn3,btn4;
 	
-	JLabel miTexto;
+	
+	private JLabel miTexto;
+	
+	private ButtonGroup miGrupo;
+	
+	private JPanel laminaBotones;
 
 	public LaminaRadio() {
 
 		setLayout(new BorderLayout());
 
 		miTexto = new JLabel("Esto es una prueba");
+		
+		//Le agrego caracteristicas
+		miTexto.setFont(new Font("Serif", Font.PLAIN, 12));
+		
+		
 		add(miTexto,BorderLayout.CENTER);
 		
+		//SIEMPRE TENEMOS QUE INICIR LAS LAMINAS O BOTONES, PARA EVITAR EXCEPCIONES
+		laminaBotones= new JPanel();
+		miGrupo=new ButtonGroup();
 
-		JPanel lamina2 = new JPanel();
-		add(lamina2, BorderLayout.SOUTH);
-
-		// Primero determinamos un grupo de botones y luego los creamos, el grupo sirve
-		// para que solo uno se seleccione
-		ButtonGroup miGrupo1 = new ButtonGroup();
-		btn1 = new JRadioButton("pequeño", false); // Estado inicial sin seleccioner
-		btn2 = new JRadioButton("Mediano", true); // Estado inicial seleccionado
-		btn3 = new JRadioButton("Grande", false); // Estado inicial sin seleccioner
-
-		// Le damos a boton1 la escucha
-		btn1.addActionListener(new ManejoRadios());
-		btn2.addActionListener(new ManejoRadios());
-		btn3.addActionListener(new ManejoRadios());
-//		btn4.addActionListener(new ManejoRadios()); --> Esto nos genera un error xq aun no esta creado
-
-		// Los añadimos al grupo
-		miGrupo1.add(btn1);
-		miGrupo1.add(btn2);
-		miGrupo1.add(btn3);
-
-		// No se puede agregar el grupo, debemos agregar uno a uno los botones
-		lamina2.add(btn1, BorderLayout.SOUTH);
-		lamina2.add(btn2, BorderLayout.SOUTH);
-		lamina2.add(btn3, BorderLayout.SOUTH);
-
-		// Nuevo grupo
-		ButtonGroup miGrupo2 = new ButtonGroup();
-		btn4 = new JRadioButton("Muy grande", false);
-		btn5 = new JRadioButton("No hago nada xd", false);
-
-		miGrupo2.add(btn4);
-		miGrupo2.add(btn5);
-
-		lamina2.add(btn4, BorderLayout.SOUTH);
-		lamina2.add(btn5, BorderLayout.SOUTH);
+		//Tenemos que llamar al metodo... Esto supone como instanciar desde MAIN
+		ColocarBotones("Pequeño", false, 10);
+		ColocarBotones("Mediano", false, 12);
+		ColocarBotones("Grande", false, 18);
+		ColocarBotones("Muy grande", false, 26);
 		
-		btn4.addActionListener(new ManejoRadios());
-		btn5.addActionListener(new ManejoRadios());
+		//Agregamos la lamina a la principal
+		add(laminaBotones,BorderLayout.SOUTH);
 	}
 
-	private class ManejoRadios implements ActionListener {
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-
-			if (btn1.isSelected()) {
-
-				miTexto.setFont(new Font("Serif", Font.PLAIN, 10));
-
-			}else if(btn2.isSelected()){
-				miTexto.setFont(new Font("Serif", Font.PLAIN, 12));
+	//Creacion de un metodo para crear botones y ahorrar codigo
+	public void ColocarBotones (String nombre, boolean seleccionado, int tamano) {
+		
+		JRadioButton boton= new JRadioButton(nombre,seleccionado);
+		//Se añadiran todos al grupo
+		miGrupo.add(boton);
+		
+		//Añadimos el grupo y sus botones a una nueva lamina
+		laminaBotones.add(boton);
+		
+		//Esto sustitiye a una clase interna
+		ActionListener miEvento=new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
 				
-			}else if(btn3.isSelected()){
-				miTexto.setFont(new Font("Serif", Font.PLAIN, 18));
-				
-			}else if(btn4.isSelected()){
-				miTexto.setFont(new Font("Serif", Font.PLAIN, 30));
-				
+				miTexto.setFont(new Font("Serif",Font.PLAIN,tamano));
 			}
-
-		}
-
+		};
+		
+		//Ponemos todos los botones a la escucha
+		boton.addActionListener(miEvento);
 	}
+	
 }
