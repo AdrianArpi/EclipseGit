@@ -50,12 +50,17 @@ public class XmlFactorial {
 			hijo.setText(String.valueOf(factorial(i)));
 			root.addContent(hijo);
 			
+			Element hijo2=new Element("Adrian");
+			hijo2.setAttribute("xd",String.valueOf(i));
+			hijo2.setText(String.valueOf(factorial(i)));
+			root.addContent(hijo2);
+			
 			
 		}
 		
 		XMLOutputter serializador=new XMLOutputter(Format.getPrettyFormat());
 		try {
-			serializador.output(root, new FileWriter("fact.xml")); //doc --> NOs imprime todo el documento junto a la version (root,System.out)
+			serializador.output(root, System.out); //doc --> NOs imprime todo el documento junto a la version (root,System.out)
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
