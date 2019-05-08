@@ -42,6 +42,8 @@ public class XmlFactorial {
 		
 		Element root=new Element("Factoriales");
 		Document doc=new Document(root);
+	
+		
 		
 		for (int i = 1; i <=resp; i++) {
 			
@@ -50,13 +52,22 @@ public class XmlFactorial {
 			hijo.setText(String.valueOf(factorial(i)));
 			root.addContent(hijo);
 			
-			Element hijo2=new Element("Adrian");
-			hijo2.setAttribute("xd",String.valueOf(i));
-			hijo2.setText(String.valueOf(factorial(i)));
-			root.addContent(hijo2);
+			//Añadimos contenido al hijo
+			hijo.addContent("Prueba");
+			
 			
 			
 		}
+		
+		//Creamos un segundo elemento, lo añadimos al final y le agregamos un hijo
+		Element hijo2=new Element("Codigo");
+		root.addContent(hijo2);
+		Element sub2=new Element("Cod");
+		hijo2.addContent(sub2.addContent("54321"));
+		
+		//A sub2 le agregamos un atributo de tipo int
+		sub2.setAttribute("id", String.valueOf(50));
+		
 		
 		XMLOutputter serializador=new XMLOutputter(Format.getPrettyFormat());
 		try {
@@ -65,6 +76,7 @@ public class XmlFactorial {
 			e.printStackTrace();
 		}
 
+		
 	}
 
 }
