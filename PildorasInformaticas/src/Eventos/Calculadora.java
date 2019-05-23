@@ -11,8 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * Creacion de una calculadora
+ * <h1>Creacion de una calculadora basica</h1>
  * @author Adrian Arpi
+ * @since 2019/05/13
  *
  */
 
@@ -28,9 +29,20 @@ public class Calculadora {
 
 }
 
+/**
+ * Clase que representa el marco de la calculadora
+ *
+ */
 class MarcoCalculadora extends JFrame{
 	
-	
+/**
+ * Propiedades del marco
+ * <ul>
+ * 		<li>Titulo</li>
+ * 		<li>Tamaño</li>
+ * 		<li>Añade lamina</li>
+ * </ul>
+ */
 	public MarcoCalculadora() {
 		
 		
@@ -43,13 +55,18 @@ class MarcoCalculadora extends JFrame{
 		add(miLamina);
 		
 		//Gracias a esta opcion redimensionamos las laminas y los botones, ya que estos tienen un tamaño por defecto
-		//pack();
+		pack();
 		
 	}
 	
 	
 }
 
+/**
+ * Clase que representa la lamina de nuestra calculadora
+ * @author dw1a_alum1
+ *
+ */
 class LaminaCalculadora extends JPanel{
 	
 	
