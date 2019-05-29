@@ -19,6 +19,11 @@ import org.jdom2.Element;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
+/**
+*Nuevo comentario para generar conflictos
+*@author adrian
+*@since 29/05/2019
+*/
 public class XmlFactorial extends JFrame{
 	
 	public XmlFactorial(){
@@ -110,14 +115,14 @@ private class lamina extends JPanel{
 //			hijo.setText(String.valueOf(factorial(i)));
 //			root.addContent(hijo);
 //			
-//			//Añadimos contenido al hijo
+//			//AÃ±adimos contenido al hijo
 //			hijo.addContent("Prueba");
 //			
 //			
 //			
 //		}
 //		
-//		//Creamos un segundo elemento, lo añadimos al final y le agregamos un hijo
+//		//Creamos un segundo elemento, lo aÃ±adimos al final y le agregamos un hijo
 //		Element hijo2=new Element("Codigo");
 //		root.addContent(hijo2);
 //		Element sub2=new Element("Cod");
