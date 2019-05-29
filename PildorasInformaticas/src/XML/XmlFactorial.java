@@ -19,6 +19,11 @@ import org.jdom2.Element;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
+/**
+ * Comentario de clase de prueba
+ * @author adria
+ *
+ */
 public class XmlFactorial extends JFrame{
 	
 	public XmlFactorial(){
