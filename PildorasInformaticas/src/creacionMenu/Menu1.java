@@ -10,6 +10,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
+import javax.swing.SwingConstants;
 
 /**
  * En esta clase se creara un menu simple (el primero)
@@ -65,9 +66,16 @@ public class Menu1 extends JFrame{
 		archivo.add(guardar);
 		archivo.add(guardarComo);
 		
-		cortar= new JMenuItem("Cortar");
-		copiar= new JMenuItem("Copiar");
-		pegar= new JMenuItem("Pegar");
+		//Estas imagenes gif admiten transparencia (a ser posible mejor de este tipo)
+		//Por defecto se posicionan a la derecha de la imagen
+		cortar= new JMenuItem("Cortar", new ImageIcon("cortar.gif"));
+		copiar= new JMenuItem("Copiar", new ImageIcon("copiar.gif"));
+		pegar= new JMenuItem("Pegar", new ImageIcon("pegar.gif"));
+		
+		//Para cambiar la posicion de la imagen 
+		cortar.setHorizontalTextPosition(SwingConstants.LEFT);
+		copiar.setHorizontalTextPosition(SwingConstants.LEFT);
+		pegar.setHorizontalTextPosition(SwingConstants.LEFT);
 		
 		opcion1= new JMenuItem("Opcion 1");
 		opcion2= new JMenuItem("Opcion 2");
